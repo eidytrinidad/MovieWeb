@@ -1,5 +1,6 @@
 @import 'fontColor.scss';
-@import 'header.scss';
+@import 'banner.scss';
+
 
 *{
     padding: 0;
@@ -10,4 +11,10 @@
 body
 {
     font-family: $Primary-Font;
+}
+
+.contenedor{
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
 }

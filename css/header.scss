@@ -1,0 +1,47 @@
+header{
+    width: 100%;
+    padding-top: 25px;
+    color:$Blanco;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .menu{
+      
+        .btnBurger{
+            @include btn;
+            i{
+               
+                font-size:2rem;
+            }
+        }
+
+    }
+
+    .busqueda{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        //background-color: red;
+        width: 100%;
+        max-width: 80px;
+        .btnSearch{
+            @include btn;
+            i{
+               
+                font-size:1.5rem;
+            }
+        }
+
+        .btnNotification{
+            @include btn;
+            border-radius: 50%;
+            background-color: #fff;
+            width: 30px;
+            height: 30px;
+            i{
+               color:$Gris-Oscuro;
+                font-size:1rem;
+            }
+        }
+    }
+}

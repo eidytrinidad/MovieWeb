@@ -1,4 +1,76 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+.banner {
+  width: 100%;
+  height: 699px;
+  background-image: url(../img/Banner.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+  .banner header {
+    width: 100%;
+    padding-top: 25px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .banner header .menu .btnBurger {
+      border: none;
+      background: none;
+      color: #fff; }
+      .banner header .menu .btnBurger i {
+        font-size: 2rem; }
+    .banner header .busqueda {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 80px; }
+      .banner header .busqueda .btnSearch {
+        border: none;
+        background: none;
+        color: #fff; }
+        .banner header .busqueda .btnSearch i {
+          font-size: 1.5rem; }
+      .banner header .busqueda .btnNotification {
+        border: none;
+        background: none;
+        color: #fff;
+        border-radius: 50%;
+        background-color: #fff;
+        width: 30px;
+        height: 30px; }
+        .banner header .busqueda .btnNotification i {
+          color: #4b4c4e;
+          font-size: 1rem; }
+  .banner .movieInfo {
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    margin-top: 150px;
+    color: #fff; }
+    .banner .movieInfo h2 {
+      font-size: 2.25rem;
+      margin-bottom: 25px; }
+    .banner .movieInfo .detalle {
+      font-size: 1.125rem;
+      margin-bottom: 40px; }
+    .banner .movieInfo .btnBox {
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 480px; }
+      .banner .movieInfo .btnBox .btnBanner {
+        background: none;
+        color: #fff;
+        border: 2px solid #fff;
+        font-size: 1.125rem;
+        width: 100%;
+        max-width: 177px;
+        height: 45px; }
+        .banner .movieInfo .btnBox .btnBanner i {
+          margin-right: 5px; }
+
 * {
   padding: 0;
   margin: 0;
@@ -6,5 +78,10 @@
 
 body {
   font-family: "Montserrat", sans-serif; }
+
+.contenedor {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto; }
 
 /*# sourceMappingURL=style.css.map */

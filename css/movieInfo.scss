@@ -1,0 +1,42 @@
+.movieInfo {
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    margin-top: 150px;
+    color: $Blanco;
+
+    h2 {
+        font-size: 2.25rem;
+        margin-bottom: 25px;
+    }
+
+    .detalle {
+        font-size: 1.125rem;
+        margin-bottom: 40px;
+    }
+
+   
+    .btnBox {
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 480px;
+
+        .btnBanner{
+            background: none;
+            color: $Blanco;
+            border: 2px solid $Blanco;
+            font-size: 1.125rem;
+            width: 100%;
+            max-width: 177px;
+            height: 45px;
+            i{
+                margin-right: 5px;
+            }
+            
+
+          
+        }
+    }
+}

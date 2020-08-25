@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,38 +8,176 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Movie Web</title>
 </head>
+
 <body>
-  <section class="banner">
-    <div class="contenedor">
-        <header>
-            <nav class="menu">
-                <button class="btnBurger">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </nav>
-    
-            <article class="busqueda">
-                <button class="btnSearch">
-                    <i class="fas fa-search"></i>
-                </button>
-                <button class="btnNotification">
-                    <i class="fas fa-bell"></i>
-                </button>
-            </article>
-        </header>
+    <section class="banner">
+        <div class="contenedor">
+            <header>
+                <nav class="menu">
+                    <button class="btnBurger">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
 
-        <section class="movieInfo">
-            <h2>Deathstroke: Caballeros y Dragones</h2>
-            <p class="detalle">Hace diez años, Slade Wilson, alias el súper asesino llamado Deathstroke, cometió un trágico error y su esposa e hijo pagaron un precio terrible. Ahora, una década después, la familia de Wilson está amenazada una vez más por el asesino Chacal y los terroristas de H.IV.E. ¿Puede Deathstroke expiar los pecados del pasado o su familia pagará el precio máximo?</p>
+                <article class="busqueda">
+                    <button class="btnSearch">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="btnNotification">
+                        <i class="fas fa-bell"></i>
+                    </button>
+                </article>
+            </header>
 
-            <article class="btnBox">
-                <button class="btnBanner"><i class="fas fa-play"></i> Reproducir</button>
-                <button class="btnBanner">
-                  <img src="img/infoIcon.png" alt="">
-                    Mas informacion</button>
+            <section class="movieInfo">
+                <h2>Deathstroke: Caballeros y Dragones</h2>
+                <p class="detalle">Hace diez años, Slade Wilson, alias el súper asesino llamado Deathstroke, cometió un
+                    trágico error y su esposa e hijo pagaron un precio terrible. Ahora, una década después, la familia
+                    de Wilson está amenazada una vez más por el asesino Chacal y los terroristas de H.IV.E. ¿Puede
+                    Deathstroke expiar los pecados del pasado o su familia pagará el precio máximo?</p>
+
+                <article class="btnBox">
+                    <button class="btnBanner"><i class="fas fa-play"></i> Reproducir</button>
+                    <button class="btnBanner btnInfo">
+                        <img src="img/infoIcon.png" alt="">
+                        <!-- <div class="icon">
+                    <i class="fas fa-info"></i>
+                  </div> -->
+                        Mas informacion</button>
+                </article>
+            </section>
+
+
+
+        </div>
+    </section>
+    <main>
+        <section class="contenedor">
+            <article class="MenuBotones">
+                <button class="active">NUEVO</button>
+                <button>PROXIMAMENTE</button>
+                <button>ANIME</button>
+                <button>SERIES</button>
+                <button>TRAILERS</button>
+                <button>MAS</button>
+
             </article>
+            <hr>
+
+            <article class="MovieGrid">
+                <div class="movie">
+                    <img src="img/Poster1.png" alt="Poster1">
+                    <div class="texto">
+                        <h4 class="titulo">FUERA DE CONTROL</h4>
+                        <p class="genero">Action, Adventure, Sci-Fi</p>
+                        <div class="puntuacion">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <p>8.3</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="movie">
+                    <img src="img/Poster2.png" alt="Poster1">
+                    <div class="texto">
+                        <h4 class="titulo">LOGAN</h4>
+                        <p class="genero">Action, Adventure, Sci-Fi</p>
+                        <div class="puntuacion">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <p>8.3</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="movie">
+                    <img src="img/Poster3.png" alt="Poster1">
+                    <div class="texto">
+                        <h4 class="titulo">FUERA DE CONTROL</h4>
+                        <p class="genero">Action, Adventure, Sci-Fi</p>
+                        <div class="puntuacion">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <p>8.3</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="movie">
+                    <img src="img/Poster4.png" alt="Poster1">
+                    <div class="texto">
+                        <h4 class="titulo">CIVIL WAR</h4>
+                        <p class="genero">Action, Adventure, Sci-Fi</p>
+                        <div class="puntuacion">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <p>8.3</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="movie">
+                    <img src="img/Poster5.png" alt="Poster1">
+                    <div class="texto">
+                        <h4 class="titulo">THE AMAZING SPIDERMAN II</h4>
+                        <p class="genero">Action, Adventure, Sci-Fi</p>
+                        <div class="puntuacion">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <p>8.3</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="movie">
+                    <img src="img/Poster6.png" alt="Poster1">
+                    <div class="texto">
+                        <h4 class="titulo">POWER</h4>
+                        <p class="genero">Action, Adventure, Sci-Fi</p>
+                        <div class="puntuacion">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <p>8.3</p>
+                        </div>
+                    </div>
+                </div>
+
+            </article>
+            
+            <button class="btnMas">
+                <img src="img/Dots Mas.png" alt="mas">
+            </button>
         </section>
-    </div>
-  </section>
+    </main>
+
+    <footer>
+        <article class="socials">
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-facebook-square"></i>
+            <i class="fa fa-instagram"></i>
+        </article>
+      
+        <p class="autor">Diseñado por Ernesto Media / Creado por Eidy Trinidad</p>
+    </footer>
 </body>
+
 </html>

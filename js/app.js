@@ -31,3 +31,13 @@
 //     // })
     
 // })
+
+
+// const movieInfo = document.querySelector(".movieInfo");
+
+// window.onload = (event) => {
+//     setTimeout(() => {
+//         movieInfo.style.display="block"
+//     }, 2000);
+//   };
+

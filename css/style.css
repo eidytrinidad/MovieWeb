@@ -81,7 +81,7 @@ main {
   background-color: #f3f3f3; }
   main .contenedor .MenuBotones {
     width: 100%;
-    padding-top: 35px;
+    padding-top: 37px;
     display: flex;
     justify-content: space-evenly; }
     main .contenedor .MenuBotones button {
@@ -107,6 +107,7 @@ main {
     justify-content: space-between;
     flex-wrap: wrap; }
     main .contenedor .MovieGrid .movie {
+      overflow: hidden;
       position: relative;
       margin-top: 4.0625rem;
       width: 100%;
@@ -142,25 +143,40 @@ main {
             font-weight: 500; }
       main .contenedor .MovieGrid .movie .overlay {
         position: absolute;
-        display: none;
+        transition: all 1s;
+        left: 100%;
+        display: block;
         width: 100%;
         height: 470px;
         background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(12, 12, 12, 0.8)); }
-        main .contenedor .MovieGrid .movie .overlay .btnVerMas {
-          display: block;
-          margin: 60% auto;
-          background: none;
-          color: #fff;
-          border: 1px solid #f3f3f3;
-          font-weight: normal;
-          font-size: 1rem;
+        main .contenedor .MovieGrid .movie .overlay .info {
           width: 100%;
-          max-width: 177px;
-          height: 45px; }
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center; }
+          main .contenedor .MovieGrid .movie .overlay .info p {
+            color: #f3f3f3;
+            font-size: 15px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 1.5rem; }
+          main .contenedor .MovieGrid .movie .overlay .info .btnVerMas {
+            display: block;
+            background: none;
+            color: #fff;
+            border: 1px solid #f3f3f3;
+            font-weight: normal;
+            font-size: 1rem;
+            width: 100%;
+            max-width: 177px;
+            height: 45px; }
     main .contenedor .MovieGrid .movie:hover {
       cursor: pointer; }
       main .contenedor .MovieGrid .movie:hover .overlay {
-        display: block; }
+        display: block;
+        left: 0%; }
   main .contenedor .btnMas {
     background: none;
     border: none;

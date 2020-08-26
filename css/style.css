@@ -46,7 +46,7 @@
     width: 100%;
     height: 200px;
     text-align: center;
-    margin-top: 170px;
+    padding-top: 170px;
     color: #fff;
     opacity: 1;
     animation: fadeIn 2s ease-in; }
@@ -73,9 +73,16 @@
         font-size: 1.125rem;
         width: 100%;
         max-width: 177px;
-        height: 45px; }
+        height: 45px;
+        transition: all 1s; }
         .banner .movieInfo .btnBox .btnBanner i {
           margin-right: 5px; }
+        .banner .movieInfo .btnBox .btnBanner:hover {
+          background: #e50000;
+          border: 2px solid #e50000;
+          cursor: pointer; }
+        .banner .movieInfo .btnBox .btnBanner:focus {
+          outline: none; }
 @keyframes fadeIn {
   0% {
     opacity: 0; }
@@ -137,6 +144,8 @@ main {
       max-width: 300px;
       background-color: #fff;
       box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.34); }
+      main .contenedor .MovieGrid .movie img {
+        width: 100%; }
       main .contenedor .MovieGrid .movie .texto {
         width: 100%;
         padding: 1.25rem; }
@@ -194,17 +203,20 @@ main {
             font-size: 1rem;
             width: 100%;
             max-width: 177px;
-            height: 45px; }
+            height: 45px;
+            transition: all 1s; }
             main .contenedor .MovieGrid .movie .overlay .info .btnVerMas:hover {
-              background-color: #e50000;
-              border: 1px solid #e50000;
+              background: #e50000;
+              border: 2px solid #e50000;
               cursor: pointer; }
+            main .contenedor .MovieGrid .movie .overlay .info .btnVerMas:focus {
+              outline: none; }
     main .contenedor .MovieGrid .movie:hover .overlay {
       display: block;
       left: 0%; }
   main .contenedor .btnBox {
     width: 100%;
-    max-width: 150px;
+    max-width: 50px;
     margin: auto;
     padding: 80px 0; }
     main .contenedor .btnBox .btnMas {
@@ -238,6 +250,71 @@ footer {
     font-size: 0.90rem;
     font-weight: 500; }
 
+@media only screen and (max-width: 768px) {
+  .movieInfo {
+    padding: 0 80px; }
+
+  header {
+    padding: 0 30px; }
+
+  main .contenedor .MovieGrid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; } }
+@media only screen and (max-width: 425px) {
+  .banner .movieInfo {
+    padding: 0 20px; }
+    .banner .movieInfo h2 {
+      font-size: 1.7rem; }
+    .banner .movieInfo .detalle {
+      line-height: 28px;
+      font-size: 1rem; }
+    .banner .movieInfo .btnBox .btnInfo {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly; }
+    .banner .movieInfo .btnBox .btnBanner {
+      font-size: 1rem; }
+
+  main {
+    width: 100%;
+    background-color: #f3f3f3; }
+    main .contenedor .MenuBotones {
+      flex-direction: column; }
+      main .contenedor .MenuBotones button {
+        padding: 25px 15px;
+        border: none;
+        background: none;
+        color: #4b4c4e;
+        font-weight: 500;
+        font-size: 0.95rem; }
+        main .contenedor .MenuBotones button:focus {
+          outline: none; }
+        main .contenedor .MenuBotones button:hover {
+          cursor: pointer; }
+    main .contenedor .MovieGrid {
+      justify-content: center; }
+      main .contenedor .MovieGrid .movie {
+        text-align: center;
+        width: 70%; }
+        main .contenedor .MovieGrid .movie img {
+          width: 100%; }
+        main .contenedor .MovieGrid .movie .puntuacion {
+          margin: auto; } }
+@media only screen and (max-width: 375px) {
+  .banner {
+    height: 799px; }
+    .banner .movieInfo {
+      height: 600px;
+      padding-top: 90px; }
+      .banner .movieInfo .detalle {
+        font-size: 0.95rem; }
+      .banner .movieInfo .btnBox {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 70px; }
+        .banner .movieInfo .btnBox .btnBanner {
+          margin-bottom: 1.5rem; } }
 * {
   padding: 0;
   margin: 0;

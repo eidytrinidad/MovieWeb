@@ -1,50 +1,45 @@
 const btns = document.querySelectorAll(".MenuBotones button")
 
+
+
+
+//console.log(botones[0])
+
+
+// btns.forEach(button => {
+//     button.addEventListener("click",(e)=>{
+//         btns.forEach(btn=>btn.classList.remove('active'))
+//         e.target.classList.add("active")
+//     })
+// });
+
 btns.forEach((btn, index) => {
 
     btn.addEventListener("click", function (e) {
+        btns.forEach(btn=>btn.classList.remove('active'))
+        e.target.classList.add("active")
+        console.log(index)
 
-        // if (index===0) {
-        //     e.target.parentElement.FirstElementChild.classList.add("active")
-        //     e.target.parentElement.lastElementChild.classList.remove("active")
-        // }
-        // if (index===1) {
+        if (index === 0) {
 
 
-        // }
-        // if (index===2) {
+        } else if (index === 1) {
 
-        // }
-        // if (index===3) {
+        } else if (index === 2) {
 
-        // }
-        // if (index===4) {
 
-        // }
-        // if (index===5) {
-        //    console.log( index)
-        // }
-        //     console.log(index)
+        } else if (index === 3) {
 
-        if (e.target.previousElementSibling) {
-            e.target.previousElementSibling.classList.remove('active')
+
+        } else if (index === 4) {
+
+
+        } else if (index === 5) {
+   
         }
-        if (e.target.nextElementSibling) {
-            e.target.nextElementSibling.classList.remove('active')
-        }
-       // console.log(e.target.parentElement.firstElementChild)
-        e.target.classList.add('active')
-        //  e.target.nextElementSibling.classList.remove('active')
+
+
+
     })
 
-
 })
-
-
-// const movieInfo = document.querySelector(".movieInfo");
-
-// window.onload = (event) => {
-//     setTimeout(() => {
-//         movieInfo.style.display="block"
-//     }, 2000);
-//   };

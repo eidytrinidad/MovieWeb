@@ -1,15 +1,4 @@
-// const getTask = () => db.collection("proximamente").get();
 
-// const btn = document.querySelector('button')
-
-// btn.addEventListener('click', async () => {
-
-//   const querySnapshot = await getTask()
-// querySnapshot.forEach(doc => {
-//   console.log(doc.data())
-// });
-
-// })
 
 //COnexion con Firebase
 const db = firebase.firestore()
@@ -52,7 +41,7 @@ window.addEventListener('load', () => {
             <button class="btnVerMas">VER MAS</button>
             </div>
             </div>
-            <img src="${nuevas.imagen}" alt="Proximamente1">
+            <img src="${nuevas.imagen}" alt="Nuevas">
             </div>
             <div class="texto">
             <h4 class="titulo">${nuevas.titulo}</h4>
@@ -82,7 +71,7 @@ btns.forEach((btn, index) => {
     btn.addEventListener("click", async function (e) {
         btns.forEach(btn => btn.classList.remove('active'))
         e.target.classList.add("active")
-        console.log(index)
+       
 
         if (index === 0) {
             //Nuevo
@@ -103,7 +92,7 @@ btns.forEach((btn, index) => {
                     <button class="btnVerMas">VER MAS</button>
                     </div>
                     </div>
-                    <img src="${nuevas.imagen}" alt="Proximamente1">
+                    <img src="${nuevas.imagen}" alt="Nuevas">
                     </div>
                     <div class="texto">
                     <h4 class="titulo">${nuevas.titulo}</h4>
@@ -146,7 +135,7 @@ btns.forEach((btn, index) => {
                 <button class="btnVerMas">VER MAS</button>
                 </div>
                 </div>
-                <img src="${proximamente.imagen}" alt="Proximamente1">
+                <img src="${proximamente.imagen}" alt="Proximamente">
                 </div>
                 <div class="texto">
                 <h4 class="titulo">MULAN</h4>
@@ -178,7 +167,7 @@ btns.forEach((btn, index) => {
                 <button class="btnVerMas">VER MAS</button>
                 </div>
                 </div>
-                <img src="${Animes.imagen}" alt="Proximamente1">
+                <img src="${Animes.imagen}" alt="Animes">
                 </div>
                 <div class="texto">
                 <h4 class="titulo">${Animes.titulo}</h4>
@@ -216,7 +205,7 @@ btns.forEach((btn, index) => {
                 <button class="btnVerMas">VER MAS</button>
                 </div>
                 </div>
-                <img src="${Series.imagen}" alt="Proximamente1">
+                <img src="${Series.imagen}" alt="Series">
                 </div>
                 <div class="texto">
                 <h4 class="titulo">${Series.titulo}</h4>

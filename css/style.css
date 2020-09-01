@@ -123,11 +123,14 @@ main {
       background: none;
       color: #4b4c4e;
       font-weight: 500;
-      font-size: 1rem; }
+      font-size: 1rem;
+      transition: all 1s; }
       main .contenedor .MenuBotones button:focus {
         outline: none; }
       main .contenedor .MenuBotones button:hover {
-        cursor: pointer; }
+        cursor: pointer;
+        background-color: #e50000;
+        color: #fff; }
     main .contenedor .MenuBotones .active {
       color: #e50000;
       border-bottom: 3px solid #e50000; }
@@ -251,6 +254,11 @@ main {
 .contenedor .detallePelicula {
   display: flex;
   justify-content: space-between; }
+  .contenedor .detallePelicula .portada {
+    width: 100%;
+    max-width: 300px; }
+    .contenedor .detallePelicula .portada img {
+      width: 100%; }
   .contenedor .detallePelicula .texto {
     width: 100%;
     max-width: 630px;
@@ -264,6 +272,7 @@ main {
 .contenedor .links {
   padding-bottom: 50px; }
   .contenedor .links h3 {
+    padding-top: 90px;
     font-size: 3rem;
     color: #4b4c4e;
     text-align: center; }

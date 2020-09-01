@@ -320,10 +320,10 @@ async function movieSectionsUI(index) {
 async function cargar() {
 
     let movieID=sessionStorage.getItem("id")
-   console.log(movieID)
+  
 
    let genero = sessionStorage.getItem("genero")
-   console.log(genero )
+  
    
   let pelicula= await db.collection(genero).doc(movieID).get();
 
@@ -337,7 +337,7 @@ async function cargar() {
 function moviePageUI(pelicula) {
     console.log(pelicula)
     contenido+=`
-    <h3>${pelicula.titulo}</h3>
+    <h3 class=tituloPelicula>${pelicula.titulo}</h3>
     <article class="detallePelicula">
         <div class="portada">
             <img src=${pelicula.imagen} alt="portada">
@@ -358,6 +358,12 @@ function moviePageUI(pelicula) {
                     <p class="elenco"><b>Elenco: </b>${pelicula.elenco}</p>
                 </div>
     </article>
+    <article class="links">
+    <h3 >VER ONLINE/DESCARGAR</h3>
+
+<a href=""><img src="img/veronline.png" alt="ver online"></a>
+<a href=""><img src="img/descargar.png" alt="descargar"></a>
+</article>
     `
 
     contenedor.innerHTML=contenido

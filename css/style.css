@@ -242,7 +242,7 @@ main {
       main .contenedor .btnBox .btnMas:focus {
         outline: none; }
 
-.contenedor h3 {
+.contenedor .tituloPelicula {
   color: #4b4c4e;
   font-size: 5rem;
   text-align: center;
@@ -319,7 +319,7 @@ footer {
     main .contenedor .detallePelicula .texto {
       padding: 0 20px; }
   main .contenedor .links {
-    padding-top: 1rem; }
+    padding-top: 5rem; }
     main .contenedor .links h3 {
       font-size: 1.5rem;
       margin-top: -50px; }
@@ -343,6 +343,8 @@ footer {
   main {
     width: 100%;
     background-color: #f3f3f3; }
+    main .contenedor .tituloPelicula {
+      font-size: 2rem; }
     main .contenedor .MenuBotones {
       flex-direction: column; }
       main .contenedor .MenuBotones button {

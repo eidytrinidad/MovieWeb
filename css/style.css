@@ -248,8 +248,6 @@ main {
 .contenedor .detallePelicula {
   display: flex;
   justify-content: space-between; }
-  .contenedor .detallePelicula .portada {
-    background-color: white; }
   .contenedor .detallePelicula .texto {
     width: 100%;
     max-width: 630px;
@@ -309,7 +307,21 @@ footer {
   main .contenedor .MovieGrid {
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap; } }
+    flex-wrap: wrap; }
+  main .contenedor .detallePelicula {
+    flex-direction: column;
+    align-items: center; }
+    main .contenedor .detallePelicula .portada {
+      margin-bottom: 3rem; }
+    main .contenedor .detallePelicula .texto {
+      padding: 0 20px; }
+  main .contenedor .links {
+    padding-top: 1rem; }
+    main .contenedor .links h3 {
+      font-size: 1.5rem;
+      margin-top: -50px; }
+    main .contenedor .links a {
+      max-width: 200px; } }
 @media only screen and (max-width: 425px) {
   .banner .movieInfo {
     padding: 90px 20px; }

@@ -21,7 +21,7 @@
         font-size: 2rem; }
       .banner header .menu .btnBurger:hover {
         cursor: pointer;
-        color: #4b4c4e; }
+        color: #e50000; }
     .banner header .busqueda {
       display: flex;
       align-items: center;
@@ -139,7 +139,7 @@ main {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap; }
-    main .contenedor .MovieGrid h3 {
+    main .contenedor .MovieGrid .loading {
       padding-top: 7rem;
       text-align: center;
       margin: auto;
@@ -180,6 +180,9 @@ main {
               margin-bottom: 1.5rem; }
             main .contenedor .MovieGrid .movie .imagen .overlay .info .btnVerMas {
               display: block;
+              text-align: center;
+              line-height: 45px;
+              text-decoration: none;
               background: none;
               color: #fff;
               border: 1px solid #f3f3f3;

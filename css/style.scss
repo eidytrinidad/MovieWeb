@@ -22,3 +22,43 @@ body
     margin: auto;
     padding: 0;
 }
+
+
+//Burguer Menu
+
+.burgerMenu
+{position: absolute;
+top:15%;
+width:250px;
+height: 200px;
+//left: 50%;
+
+bottom: 0;
+transform: translate(-50%,-50%);
+display: none;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+border-radius: 0.3rem;
+z-index: 2;
+    background-color: $Gris-Claro;
+
+    i{
+        color: $Rojo;
+        font-size: 1.5rem;
+    }
+    a 
+    {
+        margin-bottom: 1rem;
+        //color: $Negro;
+        font-size: 18px;
+        text-decoration: none;
+        font-weight: 700;
+        
+        color:$Gris-Oscuro;
+         &:hover{
+           
+             color:$Rojo;
+         }
+    }
+}

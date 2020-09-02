@@ -404,4 +404,30 @@ body {
   margin: auto;
   padding: 0; }
 
+.burgerMenu {
+  position: absolute;
+  top: 15%;
+  width: 250px;
+  height: 200px;
+  bottom: 0;
+  transform: translate(-50%, -50%);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3rem;
+  z-index: 2;
+  background-color: #f3f3f3; }
+  .burgerMenu i {
+    color: #e50000;
+    font-size: 1.5rem; }
+  .burgerMenu a {
+    margin-bottom: 1rem;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 700;
+    color: #4b4c4e; }
+    .burgerMenu a:hover {
+      color: #e50000; }
+
 /*# sourceMappingURL=style.css.map */

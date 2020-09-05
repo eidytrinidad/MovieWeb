@@ -9,6 +9,7 @@ const btnBurger = document.querySelector(".btnBurger");
 const icon = document.querySelector(".btnBurger i");
 const burgerMenu = document.querySelector(".burgerMenu");
 
+
 let value = false;
 btnBurger.addEventListener("click", () => {
 
@@ -29,6 +30,14 @@ btnBurger.addEventListener("click", () => {
 const btns = document.querySelectorAll(".MenuBotones button")
 const movieGrid = document.querySelector(".MovieGrid")
 const contenedor = document.querySelector("main .contenedor")
+const btnInfoBanner=document.querySelector(".btnInfo");
+
+btnInfoBanner.addEventListener("click",()=>{
+    window.location.reload()   
+    localStorage.setItem("id",'SfK5FHrb890oxXAaIyyY')
+    localStorage.setItem("genero","bannerMovie")
+})
+
 let contenido = ""
 
 var movieId=""
@@ -91,9 +100,9 @@ window.addEventListener('load', () => {
                     btn.addEventListener("click",(e)=>{
                         console.log()
         
-                        sessionStorage.setItem("id",e.target.getAttribute('data-id'))
+                        localStorage.setItem("id",e.target.getAttribute('data-id'))
         
-                        sessionStorage.setItem("genero","nuevo")
+                        localStorage.setItem("genero","nuevo")
                     })
                 })
             }
@@ -172,9 +181,9 @@ async function movieSectionsUI(index) {
             btn.addEventListener("click",(e)=>{
                 console.log()
 
-                sessionStorage.setItem("id",e.target.getAttribute('data-id'))
+                localStorage.setItem("id",e.target.getAttribute('data-id'))
 
-                sessionStorage.setItem("genero","nuevo")
+                localStorage.setItem("genero","nuevo")
             })
         })
 
@@ -225,9 +234,9 @@ async function movieSectionsUI(index) {
             btn.addEventListener("click",(e)=>{
                 console.log()
 
-                sessionStorage.setItem("id",e.target.getAttribute('data-id'))
+                localStorage.setItem("id",e.target.getAttribute('data-id'))
 
-                sessionStorage.setItem("genero","proximamente")
+                localStorage.setItem("genero","proximamente")
             })
         })
 
@@ -277,9 +286,9 @@ async function movieSectionsUI(index) {
             btn.addEventListener("click",(e)=>{
                 console.log()
 
-                sessionStorage.setItem("id",e.target.getAttribute('data-id'))
+                localStorage.setItem("id",e.target.getAttribute('data-id'))
 
-                sessionStorage.setItem("genero","anime")
+                localStorage.setItem("genero","anime")
             })
         })
 
@@ -326,9 +335,9 @@ async function movieSectionsUI(index) {
             btn.addEventListener("click",(e)=>{
                 console.log()
 
-                sessionStorage.setItem("id",e.target.getAttribute('data-id'))
+                localStorage.setItem("id",e.target.getAttribute('data-id'))
 
-                sessionStorage.setItem("genero","series")
+                localStorage.setItem("genero","series")
             })
         })
     } else if (index === 4) {
@@ -341,15 +350,14 @@ async function movieSectionsUI(index) {
 
 async function cargar() {
 
-    let movieID=sessionStorage.getItem("id")
+    let movieID=localStorage.getItem("id")
   
 
-   let genero = sessionStorage.getItem("genero")
+   let genero = localStorage.getItem("genero")
   
    
   let pelicula= await db.collection(genero).doc(movieID).get();
 
- 
 
   moviePageUI(pelicula.data())
  

@@ -28,8 +28,12 @@
         .btnInfo{
             display: flex;
             align-items: center;
-            justify-content: space-evenly;
+            justify-content: space-around;
+            text-decoration: none;
+            font-size: 10px;
         }
+     
+           
 
         .btnBanner{
             background: none;
@@ -37,11 +41,12 @@
             border: 2px solid $Blanco;
             font-size: 1.125rem;
             width: 100%;
-            max-width: 177px;
+            max-width: 190px;
             height: 45px;
             transition: all 1s;
+           
             i{
-                margin-right: 5px;
+            margin-right: 5px;
             }
            
             &:hover{

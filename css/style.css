@@ -150,6 +150,46 @@ main {
       margin: auto;
       display: block;
       color: #e50000; }
+    main .contenedor .MovieGrid .playerSection {
+      margin-top: 4.0625rem;
+      margin-bottom: 2rem;
+      width: 100%;
+      display: flex;
+      justify-content: space-between; }
+      main .contenedor .MovieGrid .playerSection .player {
+        width: 100%;
+        max-width: 550px; }
+      main .contenedor .MovieGrid .playerSection iframe {
+        box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.34);
+        width: 100%;
+        max-width: 550px;
+        height: 350px; }
+      main .contenedor .MovieGrid .playerSection .text {
+        width: 100%;
+        max-width: 400px;
+        display: none; }
+    main .contenedor .MovieGrid .trailers {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      background-color: #000; }
+      main .contenedor .MovieGrid .trailers .trailer {
+        box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.34);
+        width: 100%;
+        max-width: 220px; }
+        main .contenedor .MovieGrid .trailers .trailer img {
+          width: 100%;
+          max-width: 220px;
+          height: 350px; }
+        main .contenedor .MovieGrid .trailers .trailer .btnVerTrailer {
+          background: #e50000;
+          border: none;
+          width: 100%;
+          height: 50px;
+          color: #fff;
+          margin: auto;
+          display: block; }
     main .contenedor .MovieGrid .movie {
       margin-top: 4.0625rem;
       width: 100%;

@@ -1,4 +1,3 @@
-
 //Conexion con Firebase
 const db = firebase.firestore()
 
@@ -27,18 +26,18 @@ btnBurger.addEventListener("click", () => {
 const btns = document.querySelectorAll(".MenuBotones button")
 const movieGrid = document.querySelector(".MovieGrid")
 const contenedor = document.querySelector("main .contenedor")
-const btnInfoBanner=document.querySelector(".btnInfo");
+const btnInfoBanner = document.querySelector(".btnInfo");
 
 
-btnInfoBanner.addEventListener("click",()=>{
-    window.location.reload()   
-    localStorage.setItem("id",'SfK5FHrb890oxXAaIyyY')
-    localStorage.setItem("genero","bannerMovie")
+btnInfoBanner.addEventListener("click", () => {
+    window.location.reload()
+    localStorage.setItem("id", 'SfK5FHrb890oxXAaIyyY')
+    localStorage.setItem("genero", "bannerMovie")
 })
 
 let contenido = ""
 
-var movieId=""
+var movieId = ""
 
 //Queries
 
@@ -54,28 +53,31 @@ const getAnimes = () => db.collection("anime").get();
 //Series
 const getSeries = () => db.collection("series").get();
 
+//Series
+const getTrailers = () => db.collection("trailers").get();
+
 
 window.addEventListener('load', () => {
- 
+
     onGetNuevas((querySnapshot) => {
 
         querySnapshot.forEach(doc => {
             //nuevo.push()
             const nuevas = doc.data()
-            let movieId=doc.id
-            moviesUI(nuevas,movieId) 
-            if(movieGrid){
+            let movieId = doc.id
+            moviesUI(nuevas, movieId)
+            if (movieGrid) {
                 movieGrid.innerHTML = contenido
                 const btnVerMas = document.querySelectorAll(".btnVerMas")
-    
-    
-                btnVerMas.forEach(btn=>{
-                    btn.addEventListener("click",(e)=>{
+
+
+                btnVerMas.forEach(btn => {
+                    btn.addEventListener("click", (e) => {
                         console.log()
-        
-                        localStorage.setItem("id",e.target.getAttribute('data-id'))
-        
-                        localStorage.setItem("genero","nuevo")
+
+                        localStorage.setItem("id", e.target.getAttribute('data-id'))
+
+                        localStorage.setItem("genero", "nuevo")
                     })
                 })
             }
@@ -92,7 +94,7 @@ btns.forEach((btn, index) => {
     btn.addEventListener("click", function (e) {
         btns.forEach(btn => btn.classList.remove('active'))
         e.target.classList.add("active")
-       
+
         movieSectionsUI(index)
 
     })
@@ -102,7 +104,7 @@ btns.forEach((btn, index) => {
 
 
 async function movieSectionsUI(index) {
-    
+
     if (index === 0) {
         //Nuevo
         contenido = ""
@@ -113,29 +115,29 @@ async function movieSectionsUI(index) {
                 //nuevo.push()
                 const nuevas = doc.data()
 
-                movieId=doc.id
-                moviesUI(nuevas,movieId) 
-                console.log(moviesUI(nuevas,movieId))
+                movieId = doc.id
+                moviesUI(nuevas, movieId)
+            
                 movieGrid.innerHTML = contenido
             })
         })
         movieGrid.innerHTML = contenido
 
-           
+
         const btnVerMas = document.querySelectorAll(".btnVerMas")
-    
-    
-        btnVerMas.forEach(btn=>{
-            btn.addEventListener("click",(e)=>{
+
+
+        btnVerMas.forEach(btn => {
+            btn.addEventListener("click", (e) => {
                 console.log()
 
-                localStorage.setItem("id",e.target.getAttribute('data-id'))
+                localStorage.setItem("id", e.target.getAttribute('data-id'))
 
-                localStorage.setItem("genero","nuevo")
+                localStorage.setItem("genero", "nuevo")
             })
         })
 
-    
+
     } else if (index === 1) {
         //Proximamente
 
@@ -146,9 +148,9 @@ async function movieSectionsUI(index) {
         querySnapshot.forEach(doc => {
 
             const proximamente = doc.data()
-           
-            movieId=doc.id
-          
+
+            movieId = doc.id
+
             contenido += `<div class="movie">
             <div class="imagen">
             <div class="overlay">
@@ -169,22 +171,22 @@ async function movieSectionsUI(index) {
        
             `;
 
-      
+
         })
 
         movieGrid.innerHTML = contenido
 
-        
+
         const btnVerMas = document.querySelectorAll(".btnVerMas")
-    
-    
-        btnVerMas.forEach(btn=>{
-            btn.addEventListener("click",(e)=>{
+
+
+        btnVerMas.forEach(btn => {
+            btn.addEventListener("click", (e) => {
                 console.log()
 
-                localStorage.setItem("id",e.target.getAttribute('data-id'))
+                localStorage.setItem("id", e.target.getAttribute('data-id'))
 
-                localStorage.setItem("genero","proximamente")
+                localStorage.setItem("genero", "proximamente")
             })
         })
 
@@ -195,25 +197,25 @@ async function movieSectionsUI(index) {
 
         const querySnapshot = await getAnimes()
         querySnapshot.forEach(doc => {
-            
-            const Animes= doc.data()
-       
-            movieId=doc.id
 
-            moviesUI(Animes,movieId) 
+            const Animes = doc.data()
+
+            movieId = doc.id
+
+            moviesUI(Animes, movieId)
         })
         movieGrid.innerHTML = contenido
-        
+
         const btnVerMas = document.querySelectorAll(".btnVerMas")
-    
-    
-        btnVerMas.forEach(btn=>{
-            btn.addEventListener("click",(e)=>{
+
+
+        btnVerMas.forEach(btn => {
+            btn.addEventListener("click", (e) => {
                 console.log()
 
-                localStorage.setItem("id",e.target.getAttribute('data-id'))
+                localStorage.setItem("id", e.target.getAttribute('data-id'))
 
-                localStorage.setItem("genero","anime")
+                localStorage.setItem("genero", "anime")
             })
         })
 
@@ -226,50 +228,74 @@ async function movieSectionsUI(index) {
 
         querySnapshot.forEach(doc => {
             const Series = doc.data()
-            movieId=doc.id
+            movieId = doc.id
 
-            moviesUI(Series,movieId) 
+            moviesUI(Series, movieId)
         })
         movieGrid.innerHTML = contenido
         const btnVerMas = document.querySelectorAll(".btnVerMas")
-    
-    
-        btnVerMas.forEach(btn=>{
-            btn.addEventListener("click",(e)=>{
+
+
+        btnVerMas.forEach(btn => {
+            btn.addEventListener("click", (e) => {
                 console.log()
 
-                localStorage.setItem("id",e.target.getAttribute('data-id'))
+                localStorage.setItem("id", e.target.getAttribute('data-id'))
 
-                localStorage.setItem("genero","series")
+                localStorage.setItem("genero", "series")
             })
         })
     } else if (index === 4) {
 
         contenido = ""
         movieGrid.innerHTML = '<h4 class="loading" class="animate__animated animate__flash"><i class="fas fa-spinner"></i> Loading...</h4>'
+
+        const querySnapshot = await getTrailers()
+        querySnapshot.forEach(doc => {
+            const trailers = doc.data()
+            trailerSectionUI(trailers)
+
+        })
+       
+        movieGrid.innerHTML = contenido
+
+        
+        const player= document.querySelector("#player")
+        const btnVerTrailer = document.querySelectorAll('.btnVerTrailer')
+        btnVerTrailer.forEach(btn => {
+            btn.addEventListener("click", (e) => {
+              console.log("Klk")
+            })
+        })
+        
+        changeTrailer("KK8FHdFluOQ")
+        
+        player.innerHTML=content
     } else if (index === 5) {
 
     }
 }
 
+//carga la pelicula  a la pagina de pelicula
 async function cargar() {
 
-    let movieID=localStorage.getItem("id")
-  
-
-   let genero = localStorage.getItem("genero")
-  
-   
-  let pelicula= await db.collection(genero).doc(movieID).get();
+    let movieID = localStorage.getItem("id")
 
 
-  moviePageUI(pelicula.data())
- 
+    let genero = localStorage.getItem("genero")
+
+
+    let pelicula = await db.collection(genero).doc(movieID).get();
+
+    //Llama a la pagina de pelicula
+    moviePageUI(pelicula.data())
+
 }
 
+// UI de la pagina de pelicula
 function moviePageUI(pelicula) {
     console.log(pelicula)
-    contenido+=`
+    contenido += `
     <h3 class=tituloPelicula>${pelicula.titulo}</h3>
     <article class="detallePelicula">
         <div class="portada">
@@ -299,11 +325,12 @@ function moviePageUI(pelicula) {
 </article>
     `
 
-    contenedor.innerHTML=contenido
-    
+    contenedor.innerHTML = contenido
+
 }
 
-function moviesUI(pelicula,movieId) {
+//UI De las peliculas por seccion
+function moviesUI(pelicula, movieId) {
     contenido += `<div class="movie">
     <div class="imagen">
     <div class="overlay">
@@ -329,3 +356,39 @@ function moviesUI(pelicula,movieId) {
     </div>
     </div>`;
 }
+
+
+// UI de la seccion Trailers
+function trailerSectionUI(pelicula) {
+
+
+    contenido += `
+    <div class="playerSection">
+        <div id="player" class="player"></div>
+        <div class="text">
+            <h1>Titulo de La Pelicula</h1>
+        </div>
+    </div>
+     <div class="trailers">
+
+        <div class="trailer">
+            <img class="" src=${pelicula.imagen} alt="">
+            <button id="quiet" class="btnVerTrailer">Ver Trailer</button>
+        </div>
+
+    </div>
+    `;
+
+}
+
+const changeTrailer=(trailerId)=>{
+    content=`
+    <iframe id="ytplayer" type="text/html" width="550" height="350"
+    src="http://www.youtube.com/embed/${trailerId}?&origin=http://example.com"
+    frameborder="0" allowfullscreen/> 
+    `
+  
+  }
+  
+  
+  

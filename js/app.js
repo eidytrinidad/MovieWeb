@@ -346,7 +346,7 @@ const changeTrailer=(trailerId,movieGrid,player)=>{
   
     content=`
     <iframe id="ytplayer" type="text/html" width="550" height="350"
-    src="http://www.youtube.com/embed/${trailerId}?&origin=http://example.com"
+    src="https://www.youtube.com/embed/${trailerId}?&origin=http://example.com"
     frameborder="0" allowfullscreen/> 
     `
   

@@ -443,7 +443,7 @@ footer {
         width: 100%;
         display: flex; }
         main .contenedor .MovieGrid .trailers .trailer {
-          margin: auto; } }
+          margin: 2rem auto; } }
 @media only screen and (max-width: 375px) {
   .banner {
     height: 799px; }

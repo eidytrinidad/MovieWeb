@@ -1,4 +1,5 @@
 //Conexion con Firebase
+
 const db = firebase.firestore()
 
 //Burger Menu
@@ -55,6 +56,7 @@ const getSeries = () => db.collection("series").get();
 
 //Series
 const getTrailers = () => db.collection("trailers").get();
+
 
 
 window.addEventListener('load', () => {
@@ -253,24 +255,33 @@ async function movieSectionsUI(index) {
         const querySnapshot = await getTrailers()
         querySnapshot.forEach(doc => {
             const trailers = doc.data()
-            trailerSectionUI(trailers)
-
+            contenido += `
+            <div class="trailer">
+                <img class="" src=${trailers.imagen} alt="">
+                <a href="#player"data-peliculaid=${trailers.peliculaId} class="btnVerTrailer">Ver Trailer</a>
+            </div>
+        `;
+          
         })
-       
-        movieGrid.innerHTML = contenido
 
-        
-        const player= document.querySelector("#player")
+        movieGrid.innerHTML=""
+
+        const tContenedor= document.createElement('div')
+        tContenedor.classList.add('trailers')
+        tContenedor.innerHTML=`${contenido}`
+        movieGrid.appendChild(tContenedor)
+        const player = document.createElement('div')
+        changeTrailer("KK8FHdFluOQ",movieGrid,player)
         const btnVerTrailer = document.querySelectorAll('.btnVerTrailer')
         btnVerTrailer.forEach(btn => {
-            btn.addEventListener("click", (e) => {
-              console.log("Klk")
+        
+            btn.addEventListener("click", function() {
+              
+                changeTrailer(btn.dataset.peliculaid,movieGrid,player)
+                
             })
         })
         
-        changeTrailer("KK8FHdFluOQ")
-        
-        player.innerHTML=content
     } else if (index === 5) {
 
     }
@@ -294,7 +305,7 @@ async function cargar() {
 
 // UI de la pagina de pelicula
 function moviePageUI(pelicula) {
-    console.log(pelicula)
+   
     contenido += `
     <h3 class=tituloPelicula>${pelicula.titulo}</h3>
     <article class="detallePelicula">
@@ -329,8 +340,26 @@ function moviePageUI(pelicula) {
 
 }
 
-//UI De las peliculas por seccion
-function moviesUI(pelicula, movieId) {
+
+const changeTrailer=(trailerId,movieGrid,player)=>{
+  
+  
+    content=`
+    <iframe id="ytplayer" type="text/html" width="550" height="350"
+    src="http://www.youtube.com/embed/${trailerId}?&origin=http://example.com"
+    frameborder="0" allowfullscreen/> 
+    `
+  
+        player.classList.add('playerSection')
+        player.innerHTML=  `<div id="player" class="player">${content}</div>`
+        movieGrid.insertBefore(player,movieGrid.firstElementChild)
+
+  }
+  
+  //UI De las peliculas por seccion
+  
+  
+  function moviesUI(pelicula, movieId) {
     contenido += `<div class="movie">
     <div class="imagen">
     <div class="overlay">
@@ -355,40 +384,5 @@ function moviesUI(pelicula, movieId) {
     </div>
     </div>
     </div>`;
-}
-
-
-// UI de la seccion Trailers
-function trailerSectionUI(pelicula) {
-
-
-    contenido += `
-    <div class="playerSection">
-        <div id="player" class="player"></div>
-        <div class="text">
-            <h1>Titulo de La Pelicula</h1>
-        </div>
-    </div>
-     <div class="trailers">
-
-        <div class="trailer">
-            <img class="" src=${pelicula.imagen} alt="">
-            <button id="quiet" class="btnVerTrailer">Ver Trailer</button>
-        </div>
-
-    </div>
-    `;
-
-}
-
-const changeTrailer=(trailerId)=>{
-    content=`
-    <iframe id="ytplayer" type="text/html" width="550" height="350"
-    src="http://www.youtube.com/embed/${trailerId}?&origin=http://example.com"
-    frameborder="0" allowfullscreen/> 
-    `
-  
   }
-  
-  
   

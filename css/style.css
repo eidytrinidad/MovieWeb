@@ -424,6 +424,25 @@ footer {
         main .contenedor .MovieGrid .movie img {
           width: 100%; }
         main .contenedor .MovieGrid .movie .puntuacion {
+          margin: auto; }
+      main .contenedor .MovieGrid .playerSection {
+        margin-top: 4.0625rem;
+        margin-bottom: 2rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-between; }
+        main .contenedor .MovieGrid .playerSection .player {
+          width: 100%;
+          max-width: 350px;
+          margin: auto; }
+        main .contenedor .MovieGrid .playerSection iframe {
+          box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.34);
+          width: 100%;
+          height: 350px; }
+      main .contenedor .MovieGrid .trailers {
+        width: 100%;
+        display: flex; }
+        main .contenedor .MovieGrid .trailers .trailer {
           margin: auto; } }
 @media only screen and (max-width: 375px) {
   .banner {

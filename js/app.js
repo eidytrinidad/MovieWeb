@@ -1,14 +1,11 @@
 
-
-//COnexion con Firebase
+//Conexion con Firebase
 const db = firebase.firestore()
 
-
-//Burger
+//Burger Menu
 const btnBurger = document.querySelector(".btnBurger");
 const icon = document.querySelector(".btnBurger i");
 const burgerMenu = document.querySelector(".burgerMenu");
-
 
 let value = false;
 btnBurger.addEventListener("click", () => {
@@ -31,6 +28,7 @@ const btns = document.querySelectorAll(".MenuBotones button")
 const movieGrid = document.querySelector(".MovieGrid")
 const contenedor = document.querySelector("main .contenedor")
 const btnInfoBanner=document.querySelector(".btnInfo");
+
 
 btnInfoBanner.addEventListener("click",()=>{
     window.location.reload()   
@@ -56,7 +54,6 @@ const getAnimes = () => db.collection("anime").get();
 //Series
 const getSeries = () => db.collection("series").get();
 
-var nuevo = []
 
 window.addEventListener('load', () => {
  
@@ -66,31 +63,7 @@ window.addEventListener('load', () => {
             //nuevo.push()
             const nuevas = doc.data()
             let movieId=doc.id
-        
-            contenido += `<div class="movie">
-            <div class="imagen">
-            <div class="overlay">
-            <div class="info">
-            <p>${nuevas.titulo}</p>
-            <a href="pelicula.html" class="btnVerMas" data-id=${movieId}>VER MAS</a>
-            </div>
-            </div>
-            <img src="${nuevas.imagen}" alt="Nuevas">
-            </div>
-            <div class="texto">
-            <h4 class="titulo">${nuevas.titulo}</h4>
-            <p class="genero">${nuevas.genero}</p>
-            <div class="puntuacion">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <p>${nuevas.puntuacion}</p>
-                        </div>
-            </div>
-            </div>
-            </div>`;
+            moviesUI(nuevas,movieId) 
             if(movieGrid){
                 movieGrid.innerHTML = contenido
                 const btnVerMas = document.querySelectorAll(".btnVerMas")
@@ -122,8 +95,6 @@ btns.forEach((btn, index) => {
        
         movieSectionsUI(index)
 
-
-
     })
 
 })
@@ -143,31 +114,8 @@ async function movieSectionsUI(index) {
                 const nuevas = doc.data()
 
                 movieId=doc.id
-          
-                contenido += `<div class="movie">
-                <div class="imagen">
-                <div class="overlay">
-                <div class="info">
-                <p>${nuevas.titulo}</p>
-                <a href="pelicula.html" class="btnVerMas" data-id=${movieId}>VER MAS</a>
-                </div>
-                </div>
-                <img src="${nuevas.imagen}" alt="Nuevas">
-                </div>
-                <div class="texto">
-                <h4 class="titulo">${nuevas.titulo}</h4>
-                <p class="genero">${nuevas.genero}</p>
-                <div class="puntuacion">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <p>${nuevas.puntuacion}</p>
-                </div>
-                </div>
-                </div>
-                </div>`;
+                moviesUI(nuevas,movieId) 
+                console.log(moviesUI(nuevas,movieId))
                 movieGrid.innerHTML = contenido
             })
         })
@@ -252,30 +200,7 @@ async function movieSectionsUI(index) {
        
             movieId=doc.id
 
-            contenido += `<div class="movie">
-            <div class="imagen">
-            <div class="overlay">
-            <div class="info">
-            <p>${Animes.titulo}</p>
-            <a href="pelicula.html" class="btnVerMas" data-id=${movieId}>VER MAS</a>
-            </div>
-            </div>
-            <img src="${Animes.imagen}" alt="Animes">
-            </div>
-            <div class="texto">
-            <h4 class="titulo">${Animes.titulo}</h4>
-            <p class="genero">${Animes.genero}</p>
-            <div class="puntuacion">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <p>${Animes.puntuacion}</p>
-                        </div>
-            </div>
-            </div>
-            </div>`;
+            moviesUI(Animes,movieId) 
         })
         movieGrid.innerHTML = contenido
         
@@ -298,34 +223,12 @@ async function movieSectionsUI(index) {
         contenido = ""
         movieGrid.innerHTML = '<h4 class="loading" class="animate__animated animate__flash"><i class="fas fa-spinner"></i> Loading...</h4>'
         const querySnapshot = await getSeries()
+
         querySnapshot.forEach(doc => {
             const Series = doc.data()
             movieId=doc.id
 
-            contenido += `<div class="movie">
-            <div class="imagen">
-            <div class="overlay">
-            <div class="info">
-            <p>${Series.titulo}</p>
-            <a href="pelicula.html" class="btnVerMas" data-id=${movieId}>VER MAS</a>
-            </div>
-            </div>
-            <img src="${Series.imagen}" alt="Series">
-            </div>
-            <div class="texto">
-            <h4 class="titulo">${Series.titulo}</h4>
-            <p class="genero">${Series.genero}</p>
-            <div class="puntuacion">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <p>${Series.puntuacion}</p>
-                        </div>
-            </div>
-            </div>
-            </div>`;
+            moviesUI(Series,movieId) 
         })
         movieGrid.innerHTML = contenido
         const btnVerMas = document.querySelectorAll(".btnVerMas")
@@ -342,7 +245,8 @@ async function movieSectionsUI(index) {
         })
     } else if (index === 4) {
 
-
+        contenido = ""
+        movieGrid.innerHTML = '<h4 class="loading" class="animate__animated animate__flash"><i class="fas fa-spinner"></i> Loading...</h4>'
     } else if (index === 5) {
 
     }
@@ -362,7 +266,6 @@ async function cargar() {
   moviePageUI(pelicula.data())
  
 }
-
 
 function moviePageUI(pelicula) {
     console.log(pelicula)
@@ -398,4 +301,31 @@ function moviePageUI(pelicula) {
 
     contenedor.innerHTML=contenido
     
+}
+
+function moviesUI(pelicula,movieId) {
+    contenido += `<div class="movie">
+    <div class="imagen">
+    <div class="overlay">
+    <div class="info">
+    <p>${pelicula.titulo}</p>
+    <a href="pelicula.html" class="btnVerMas" data-id=${movieId}>VER MAS</a>
+    </div>
+    </div>
+    <img src="${pelicula.imagen}" alt="Series">
+    </div>
+    <div class="texto">
+    <h4 class="titulo">${pelicula.titulo}</h4>
+    <p class="genero">${pelicula.genero}</p>
+    <div class="puntuacion">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <p>${pelicula.puntuacion}</p>
+                </div>
+    </div>
+    </div>
+    </div>`;
 }

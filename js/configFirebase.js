@@ -1,23 +1,13 @@
-// The core Firebase JS SDK is always required and must be listed first 
-
-/*TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries */
-
-
   // Your web app's Firebase configuration
-
- 
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-     apiKey: "AIzaSyApL0nXORxkZKBFQ2ptDK8eF09VX2JxKGU",
-     authDomain: "tienda-vidvie.firebaseapp.com",
-     databaseURL: "https://tienda-vidvie.firebaseio.com",
-     projectId: "tienda-vidvie",
-     storageBucket: "tienda-vidvie.appspot.com",
-     messagingSenderId: "464332715076",
-     appId: "1:464332715076:web:89ac8d8b284759a0db7811",
-     measurementId: "G-MDHS7BK3ZD"
-   };
-   // Initialize Firebase
-   firebase.initializeApp(firebaseConfig);
+  var firebaseConfig = {
+    apiKey: "AIzaSyBNYMhTHzUu_aoNywVm6l_BvnaCXxHlnJQ",
+    authDomain: "movieweb-f4756.firebaseapp.com",
+    databaseURL: "https://movieweb-f4756.firebaseio.com",
+    projectId: "movieweb-f4756",
+    storageBucket: "movieweb-f4756.appspot.com",
+    messagingSenderId: "990976461418",
+    appId: "1:990976461418:web:1058b2ac1a5fa112dfd813"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
  

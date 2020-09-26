@@ -176,7 +176,8 @@ main {
       main .contenedor .MovieGrid .trailers .trailer {
         box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.34);
         width: 100%;
-        max-width: 220px; }
+        max-width: 220px;
+        margin-bottom: 2rem; }
         main .contenedor .MovieGrid .trailers .trailer img {
           width: 100%;
           max-width: 220px;

@@ -30,6 +30,7 @@ const contenedor = document.querySelector("main .contenedor")
 const btnInfoBanner = document.querySelector(".btnInfo");
 
 
+
 btnInfoBanner.addEventListener("click", () => {
     window.location.reload()
     localStorage.setItem("id", 'SfK5FHrb890oxXAaIyyY')
@@ -385,4 +386,5 @@ const changeTrailer=(trailerId,movieGrid,player)=>{
     </div>
     </div>`;
   }
+  
   

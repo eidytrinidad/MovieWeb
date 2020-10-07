@@ -1,7 +1,7 @@
 //Base
 const db = firebase.firestore();
 
-const saveTask = (titulo,genero,director,elenco,audio,plot,imagen,puntuacion,titulos,tipo
+const saveTask = (titulo,genero,director,elenco,audio,plot,imagen,puntuacion,titulos,descarga,online,tipo
 ) => {
   db.collection(`${tipo}`).doc().set({
     titulo,
@@ -13,6 +13,8 @@ const saveTask = (titulo,genero,director,elenco,audio,plot,imagen,puntuacion,tit
     imagen,
     puntuacion,
     titulos,
+    descarga,
+    online,
   });
 };
 
@@ -31,8 +33,11 @@ formularioGuardar.addEventListener("submit", async (e) => {
   const audio = document.querySelector("#audio").value;
   const plot = document.querySelector("#plot").value;
   const puntuacion = document.querySelector("#puntuacion").value;
+  
   const titulos = document.querySelector("#titulos").value;
   const tipo = document.querySelector("#tipo").value;
+  const descarga = document.querySelector("#descarga").value;
+  const online = document.querySelector("#online").value;
 
 //Constantes de Imagenes
   const ref=firebase.storage().ref()
@@ -96,7 +101,10 @@ formularioGuardar.addEventListener("submit", async (e) => {
           imagen,
           puntuacion,
           titulos,
-          tipo
+          descarga,
+          online,
+          tipo,
+        
         );
         Mensaje.innerHTML="<p class='alert alert-success text-center'>Pelicula Agregada Con exito</p>"
       }

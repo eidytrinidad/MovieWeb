@@ -55,9 +55,11 @@ const getAnimes = () => db.collection("anime").get();
 //Series
 const getSeries = () => db.collection("series").get();
 
-//Series
+//Trailers
 const getTrailers = () => db.collection("trailers").get();
 
+//Mas 
+const getTodas = () => db.collection("todas").get();
 
 
 window.addEventListener('load', () => {
@@ -284,6 +286,31 @@ async function movieSectionsUI(index) {
         })
         
     } else if (index === 5) {
+        contenido = ""
+        movieGrid.innerHTML = '<h4 class="loading" class="animate__animated animate__flash"><i class="fas fa-spinner"></i> Loading...</h4>'
+        const querySnapshot = await getTodas();
+
+        querySnapshot.forEach(doc => {
+            const Todas = doc.data()
+            movieId = doc.id
+
+            moviesUI(Todas, movieId)
+            
+        })
+        movieGrid.innerHTML = contenido
+        const btnVerMas = document.querySelectorAll(".btnVerMas")
+
+
+        btnVerMas.forEach(btn => {
+            btn.addEventListener("click", (e) => {
+                console.log()
+
+                localStorage.setItem("id", e.target.getAttribute('data-id'))
+
+                localStorage.setItem("genero", "todas")
+            })
+        })
+
 
     }
 }
@@ -332,8 +359,8 @@ function moviePageUI(pelicula) {
     <article class="links">
     <h3 >VER ONLINE/DESCARGAR</h3>
 
-<a href=""><img src="img/veronline.png" alt="ver online"></a>
-<a href=""><img src="img/descargar.png" alt="descargar"></a>
+<a href=${pelicula.online} target=_blank><img src="img/veronline.png" alt="ver online"></a>
+<a href=${pelicula.descarga} target=_blank><img src="img/descargar.png" alt="descargar"></a>
 </article>
     `
 

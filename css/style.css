@@ -344,30 +344,30 @@ header {
     header .contenedor .menu .btn {
       margin-left: 1rem; }
 
-.guardarPelicula {
+.AdminGrid {
   width: 100%;
   background-color: #f3f3f3;
   padding-bottom: 7rem; }
-  .guardarPelicula .contenedor {
+  .AdminGrid .contenedor {
     padding-top: 50px; }
-    .guardarPelicula .contenedor h3 {
+    .AdminGrid .contenedor h3 {
       color: #4b4c4e;
       font-size: 3rem;
       text-align: center;
       margin-bottom: 70px; }
-    .guardarPelicula .contenedor .Mensajes {
+    .AdminGrid .contenedor .Mensajes {
       width: 100%;
       max-width: 400px;
       margin: auto; }
-    .guardarPelicula .contenedor form {
+    .AdminGrid .contenedor form {
       width: 100%;
       max-width: 600px;
       padding: 10px;
       margin: auto; }
-      .guardarPelicula .contenedor form label {
+      .AdminGrid .contenedor form label {
         font-weight: 600;
         font-size: 1.5rem; }
-      .guardarPelicula .contenedor form .btnAgregar {
+      .AdminGrid .contenedor form .btnAgregar {
         margin-top: 1rem;
         width: 100%;
         max-width: 100px;

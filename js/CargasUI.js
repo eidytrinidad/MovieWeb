@@ -98,4 +98,3 @@ const changeTrailer=(trailerId,movieGrid,player)=>{
         movieGrid.insertBefore(player,movieGrid.firstElementChild)
 
   }
-  

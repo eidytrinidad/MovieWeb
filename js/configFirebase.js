@@ -1,5 +1,5 @@
   // Your web app's Firebase configuration
-  var firebaseConfig = {
+var firebaseConfig = {
     apiKey: "AIzaSyBNYMhTHzUu_aoNywVm6l_BvnaCXxHlnJQ",
     authDomain: "movieweb-f4756.firebaseapp.com",
     databaseURL: "https://movieweb-f4756.firebaseio.com",

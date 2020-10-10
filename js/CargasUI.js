@@ -26,6 +26,8 @@ function moviesUI(pelicula, movieId) {
         </div>
         </div>
         </div>`;
+
+        return contenido
       }
       
       

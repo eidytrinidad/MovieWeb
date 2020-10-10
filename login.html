@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/login.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+</head>
+<body>
+
+       
+     <section>
+            <article class="container">
+
+                <!--TITULO-->
+                <h1>MOVIE WEB</h1>
+
+                <!--FORMULARIO-->
+
+                <form class="form" action="" method="POST">
+
+                    <!--EMAIL-->
+                    <p> Nombre de usuario o correo electrónico <input type="email" id="email"> </p>
+
+                    <!--PASSWORD-->
+                    <p>Contraseña<input type="password" id="password" > </p> 
+
+                    <!--BOTON ENTRAR-->
+                    <input type="submit" name="submit" value="Entrar" >
+
+                </form>
+                  
+            </article>
+            
+            
+     </section>
+
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+     <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+
+     <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+
+ 
+    <script src="js/configFirebase.js"></script>
+     <script src="js/adminjs/login.js"></script>
+
+     
+
+    
+</body>
+</html>

@@ -57,7 +57,7 @@
             <img src="${proximamente.imagen}" alt="Proximamente">
             </div>
             <div class="texto">
-            <h4 class="titulo">MULAN</h4>
+            <h4 class="titulo">${proximamente.titulo}</h4>
             <p class="genero">${proximamente.genero}</p>
             <p><b>PROXIMAMENTE</b></P>
             </div>

@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container{
+  
+/*determina el tamaño de tu pagina*/
+    width: 100%;
+   max-width: 1000px;
+   margin: auto;
+   
+}
+
+body{
+    background-color: #f3f3f3;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+/*FORMULARIO*/
+
+.container .form{
+    position: absolute;
+    background-color: white;
+    width: 400px;
+    padding: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+/*TITULO*/
+
+.container h1{
+    position: absolute;
+    padding: 50px;
+    top: 1%;
+    left: 33%;
+    transform: translate(50%,50%);
+
+}
+
+/*EMAIL & PASSWORD TEXT*/
+
+.container .form p{
+    font-weight: 300;
+    text-align: left;
+    font-size: 15px;
+}
+
+/*EMAIL & PASSWORD TEXTBOX*/
+
+.container .form input[type="email"], .form input[type="password"]{
+    display: block;
+    border: 1px solid #ccd0d4;
+    margin: 10px auto;
+    width: 300px;
+    height: 30px;
+    outline: none;
+    padding-left: 10px;
+       
+
+}
+
+/*BOTON ENTRAR*/
+
+.container .form input[type="submit"]{
+    width: 100px;
+    height: 30px;
+    margin-top: 15px;
+    border: 0;
+    background-color: red;
+    color: white;
+    font-weight: 700;
+    
+}
+
+/*HOVER*/ 
+
+.container .form input[type="email"]:focus, .box input[type="password"]:focus{
+    border:1px solid red;
+}
+
+
+.container .form input[type="submit"]:hover{
+    cursor: pointer;
+    background-color: rgb(221, 3, 3);
+}
+
+
+/*RESPONSIVE*/
+
+@media only screen and (max-width: 320px) {
+    .container .form{
+        width: 300px;
+        margin-top: 20px;
+    }
+
+    .container h1{
+        display: block;
+        margin-left: -30px;
+        
+    }
+
+    .container .form input[type="email"], .form input[type="password"]{
+        width: 200px;
+    }
+
+    .container .form p{
+        font-size: 10px;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .container .form{
+        width: 300px;
+        margin-top: 20px;
+    }
+
+    .container h1{
+        left: 5px;
+        top: 0;
+    }
+
+    .container .form input[type="email"], .form input[type="password"]{
+        width: 200px;
+    }
+
+    .container .form p{
+        font-size: 10px;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .container .form{
+        width: 300px;
+        margin-top: 20px;
+    }
+
+    .container h1{
+        display: block;
+        margin-left: -145px;
+        top: 0;
+    }
+
+    .container .form input[type="email"], .form input[type="password"]{
+        width: 200px;
+    }
+
+    .container .form p{
+        font-size: 10px;
+        text-align: center;
+    }
+}

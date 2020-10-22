@@ -107,3 +107,10 @@ btns.forEach((btn, index) => {
     })
 
 })
+
+// Banner
+
+const bannerPlayer= document.querySelector('.modal-body').innerHTML= `<iframe class="bannerPlayer" id="ytplayer" type="text/html" width="760" height="550"
+src="https://www.youtube.com/embed/lHiM8Ghe2BI?&origin=http://example.com"
+frameborder="0" allowfullscreen/> `
+

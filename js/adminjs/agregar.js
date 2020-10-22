@@ -22,7 +22,7 @@ export function formAgregarUI(contenido) {
     </div>
     <div class="form-group">
       <label for="elenco">Elenco</label>
-      <input type="text" id="elenco" class="form-control" />
+      <textarea id="elenco"  rows="5"  class="form-control">  </textarea>
     </div>
     <div class="form-group">
       <label for="imagen">Imagen</label>
@@ -31,7 +31,7 @@ export function formAgregarUI(contenido) {
     </div>
     <div class="form-group">
       <label for="plot">Plot</label>
-      <input type="text" id="plot" class="form-control" />
+      <textarea id="plot" rows="5"  class="form-control">  </textarea>
     </div>
     <div class="form-group">
       <label for="puntuacion">Puntuacion</label>
@@ -168,7 +168,7 @@ export function formAgregarUI(contenido) {
               );
             
             }, 2000);
-          
+            formularioGuardar.reset()
             Swal.fire({
               icon: 'success',
               title: 'Pelicula Guardada Con Exito',

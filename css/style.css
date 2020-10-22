@@ -507,8 +507,10 @@ footer {
   margin: 0;
   box-sizing: border-box; }
 
-body {
-  font-family: "Montserrat", sans-serif; }
+body, html {
+  font-family: "Montserrat", sans-serif;
+  height: 100%;
+  position: relative; }
 
 .contenedor {
   width: 100%;

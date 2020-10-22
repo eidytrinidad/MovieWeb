@@ -51,7 +51,7 @@ export function formsEditarFunc(
     const titulo = document.querySelector("#tituloBuscar").value;
 
     const pelicula = db.collection(genero);
-    pelicula.where("titulo", "==", titulo).onSnapshot((querySnapshot) => {
+    pelicula.orderBy('titulo').startAt(titulo).endAt(titulo+'\uf8ff').onSnapshot((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         if (ifExist) {
           AdminGrid.innerHTML += EditarUI2(contenido, doc.data());
@@ -67,7 +67,7 @@ export function formsEditarFunc(
 export function EditarUI2(contenido, info) {
   contenido += `   
       <hr/>
-      <form >
+      <form id="btnEditar">
       <div class="form-group">
         <label for="titulo">Titulo</label>
         <input type="text" id="titulo" class="form-control" value= "${info.titulo}" />
@@ -131,7 +131,7 @@ export function EditarUI2(contenido, info) {
     </select>
   </div>
     
-        <button id="btnEditar" class="btnAgregar">Editar</button>
+        <button  class="btnAgregar">Editar</button>
 
       </form>
     
@@ -143,7 +143,7 @@ export function EditarUI2(contenido, info) {
 export async function funcEditar(editarTask, tabla, saveTask, id, db) {
 
   const btnEditar = document.querySelector("#btnEditar");
-  const loading = document.querySelector(".loading");
+
 
   btnEditar.addEventListener("click", async (e) => {
     e.preventDefault();
@@ -190,7 +190,7 @@ export async function funcEditar(editarTask, tabla, saveTask, id, db) {
           .then((snapshot) => snapshot.ref.getDownloadURL())
           .then(async (url) => {
             const imagen = url;
-            loading.style.display = "flex";
+            
             await saveTask(
               titulo,
               genero,
@@ -241,6 +241,7 @@ export async function funcEditar(editarTask, tabla, saveTask, id, db) {
               online: online,
               imagen: imagen,
             });
+            btnEditar.reset()
             Swal.fire({
               icon: "success",
               title: "Pelicula Actualizada con Exito",
@@ -261,6 +262,7 @@ export async function funcEditar(editarTask, tabla, saveTask, id, db) {
           descarga: descarga,
           online: online,
         });
+        btnEditar.reset()
         Swal.fire({
           icon: "success",
           title: "Pelicula Actualizada con Exito",

@@ -4,6 +4,7 @@ const db = firebase.firestore();
 import {formAgregarUI,formAgregarFunc} from './agregar.js'
 import {formBorrarUI,formBorrarFunc} from './borrar.js'
 import {formsEditarUI,formsEditarFunc} from './editar.js'
+import {formsTrailerAgregar, formsTrailers}from './trailers.js'
 
 localStorage.getItem("admin")
 
@@ -44,19 +45,16 @@ const saveTask = (
 const updateTask =(id, tabla, updatedTask) =>db.collection(tabla).doc(id).update(updatedTask)
 
 
-const btns = document.querySelectorAll(".btn");
+const btns = document.querySelectorAll(".menu .btn");
 
 const AdminGrid = document.querySelector(".AdminGrid .contenedor");
 let contenido = "";
 
 window.addEventListener("load", async () => {
-  // AdminGrid.innerHTML = formAgregarUI(contenido);
-  // formAgregarFunc(saveTask);
-
-  AdminGrid.innerHTML = formsEditarUI(contenido);
-  formsEditarFunc(db,contenido,AdminGrid,updateTask,saveTask,db)
-
-
+  AdminGrid.innerHTML = formAgregarUI(contenido);
+  formAgregarFunc(saveTask);
+  // AdminGrid.innerHTML = formsTrailers(contenido)
+  // formsTrailerAgregar(db)
 });
 
 btns.forEach((btn, index) => {
@@ -67,6 +65,7 @@ btns.forEach((btn, index) => {
     }
     if (index == 1) {
       AdminGrid.innerHTML = formsEditarUI(contenido);
+      formsEditarFunc(db,contenido,AdminGrid,updateTask,saveTask,db)    
      
     }
     if (index == 2) {
@@ -74,6 +73,7 @@ btns.forEach((btn, index) => {
       formBorrarFunc(db);
     }
     if (index == 3) {
+      AdminGrid.innerHTML = formsTrailers(contenido)
     }
   });
 });

@@ -13,7 +13,7 @@
 
 <body>
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
           <div class="modal-content">
          
@@ -26,6 +26,7 @@
           </div>
         </div>
       </div>
+
 
     <section class="banner">
         
@@ -43,14 +44,14 @@
                     </button>
                 </nav>
 
-                <article class="busqueda">
+                <!-- <article class="busqueda">
                     <button class="btnSearch">
                         <i class="fas fa-search"></i>
                     </button>
                     <button class="btnNotification">
                         <i class="fas fa-bell"></i>
                     </button>
-                </article>
+                </article> -->
             </header>
 
             <section class="movieInfo">
@@ -61,20 +62,15 @@
                     Deathstroke expiar los pecados del pasado o su familia pagará el precio máximo?</p>
 
                 <article class="btnBox">
-                    <button class="btnBanner"><i class="fas fa-play"></i> Reproducir</button>
-                    <button class="btnBanner btnInfo">
+                    <button class="btnBanner" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-play"></i> Reproducir</button>
+                    <a href="pelicula.html" class="btnBanner btnInfo">
                         <img src="img/infoIcon.png" alt="">
-                        <!-- <div class="icon">
-                    <i class="fas fa-info"></i>
-                  </div> -->
-                        Mas informacion</button>
+                        Mas informacion</a>
                 </article>
             </section>
-
-
-
         </div>
     </section>
+
     <main>
         <section class="contenedor">
  
